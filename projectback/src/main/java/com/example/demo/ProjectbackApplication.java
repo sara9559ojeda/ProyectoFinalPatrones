@@ -4,9 +4,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 import com.example.demo.service.JsonLoader;
 
 @SpringBootApplication
@@ -21,18 +19,10 @@ public class ProjectbackApplication {
 
     @PostConstruct
     public void runOnStartup() throws Exception {
-        String filePath = "../detections/detections_precision.json";
+        String filePath = "../detections/detections.json";
         jsonLoader.loadJsonAndSaveToDb(filePath);
-        System.out.println("✅ Detections imported at startup!");
+        System.out.println("Detections importadas");
     }
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*");
-            }
-        };
-    }
+   
 }

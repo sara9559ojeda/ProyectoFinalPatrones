@@ -5,10 +5,9 @@ import lombok.*;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
-@Table(name = "detections")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Detection {
 
     @Id
@@ -16,10 +15,14 @@ public class Detection {
     private Long id;
 
     private Long timestampMs;
-    
-    private Integer carCount;
-    private Integer busCount;
-    private Integer truckCount;
+    private String date;
+
+    @Column(columnDefinition = "TEXT")
+    private String objectsTotal;
+
+    @Column(columnDefinition = "TEXT")
+    private String objectsByLane;
+
+    @Column(columnDefinition = "TEXT")
+    private String avgSpeedByLane;
 }
-
-
