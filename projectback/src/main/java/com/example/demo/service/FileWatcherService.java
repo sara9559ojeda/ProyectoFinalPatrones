@@ -1,54 +1,59 @@
 package com.example.demo.service;
 
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import jakarta.annotation.PostConstruct;
+
+import java.io.IOException;
 import java.nio.file.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Service
 @RequiredArgsConstructor
 public class FileWatcherService {
 
-    private final JsonLoader jsonLoader;  // Usamos tu JsonLoader actual
+    private final JsonLoader jsonLoader;
 
-    private final ExecutorService executor = Executors.newSingleThreadExecutor(); // Hilo separado
+    private static final String DIRECTORY_PATH = "../detections";  
+    private static final String FILE_NAME = "detections.json";  
 
     @PostConstruct
-    public void watchFile() {
-        Path path = Paths.get("../detections/");
-        String filename = "detections_precision.json";
+    @Async
+    public void watchFileChanges() {
+        try {
+            WatchService watchService = FileSystems.getDefault().newWatchService();
+            Path path = Paths.get(DIRECTORY_PATH);
+            path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY);
 
-        executor.submit(() -> {
-            try {
-                WatchService watchService = FileSystems.getDefault().newWatchService();
-                path.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
+            System.out.println("Observando cambios en " + path.toAbsolutePath());
 
-                System.out.println("[👀] Vigilando cambios en: " + path.toAbsolutePath());
+            while (true) {
+                WatchKey key = watchService.take();
 
-                while (true) {
-                    WatchKey key = watchService.take(); // Espera a que algo pase
-                    for (WatchEvent<?> event : key.pollEvents()) {
-                        Path changed = (Path) event.context();
+                for (WatchEvent<?> event : key.pollEvents()) {
+                    WatchEvent.Kind<?> kind = event.kind();
+                    Path changedFile = (Path) event.context();
 
-                        if (event.kind() == StandardWatchEventKinds.ENTRY_MODIFY &&
-                            changed.toString().equals(filename)) {
+                    if (changedFile.toString().equals(FILE_NAME)) {
+                        System.out.println("Archivo " + FILE_NAME + " " + (kind == StandardWatchEventKinds.ENTRY_MODIFY ? "modificado" : "creado"));
 
-                            System.out.println("[📂] JSON actualizado, importando...");
-                            String filePath = path.resolve(filename).toString();
-                            jsonLoader.loadJsonAndSaveToDb(filePath);
-                            System.out.println("[✅] Importación automática lista");
-                        }
+                        jsonLoader.loadJsonAndSaveToDb(DIRECTORY_PATH + "/" + FILE_NAME);
+                        System.out.println("Datos cargados y guardados en la base de datos");
                     }
-                    key.reset();
                 }
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                boolean valid = key.reset();
+                if (!valid) {
+                    System.out.println("WatchKey inválido. Terminando observación.");
+                    break;
+                }
             }
-        });
+
+        } catch (IOException | InterruptedException e) {
+            System.err.println("Error observando el archivo: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error cargando JSON y guardando en DB: " + e.getMessage());
+        }
     }
 }
-

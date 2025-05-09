@@ -18,18 +18,39 @@ public class JsonLoader {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public void loadJsonAndSaveToDb(String filePath) throws Exception {
+        System.out.println("Leyendo el archivo JSON desde: " + filePath);
+
         DetectionsWrapper wrapper = objectMapper.readValue(new File(filePath), DetectionsWrapper.class);
 
+        System.out.println("Archivo JSON cargado exitosamente.");
+        
         List<Detection> detections = wrapper.getDetections().stream()
-            .map(d -> Detection.builder()
-                .timestampMs(d.getTimestamp_ms())
-                .carCount(d.getObjects().getOrDefault("car", 0))
-                .busCount(d.getObjects().getOrDefault("bus", 0))
-                .truckCount(d.getObjects().getOrDefault("truck", 0))
-                .build()
-            ).collect(Collectors.toList());
+            .map(d -> {
+                System.out.println("Procesando detección con timestamp_ms: " + d.getTimestamp_ms());
+                return Detection.builder()
+                    .timestampMs(d.getTimestamp_ms())
+                    .date(d.getDate())
+                    .objectsTotal(safeWriteValueAsString(d.getObjects_total()))
+                    .objectsByLane(safeWriteValueAsString(d.getObjects_by_lane()))
+                    .avgSpeedByLane(safeWriteValueAsString(d.getAvg_speed_by_lane()))
+                    .build();
+            })
+            .collect(Collectors.toList());
 
+        
+        System.out.println("Datos procesados. Guardando en la base de datos...");
         detectionService.saveDetections(detections);
+
+        System.out.println("Detecciones cargadas exitosamente en la base de datos.");
+    }
+
+    
+    private String safeWriteValueAsString(Object value) {
+        try {
+            return objectMapper.writeValueAsString(value);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ayuda"; 
+        }
     }
 }
-

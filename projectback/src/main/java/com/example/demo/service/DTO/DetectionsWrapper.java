@@ -1,6 +1,5 @@
 package com.example.demo.service.DTO;
 
-
 import lombok.Data;
 import java.util.List;
 
@@ -8,6 +7,5 @@ import java.util.List;
 public class DetectionsWrapper {
     private List<DetectionJson> detections;
 }
-
 
 
