@@ -3,19 +3,721 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Nueva paleta gris-blanco pastel */
+  --pastel-gray-50: #f9fafb;
+  --pastel-gray-100: #f3f4f6;
+  --pastel-gray-200: #e5e7eb;
+  --pastel-gray-300: #d1d5db;
+  --pastel-gray-400: #9ca3af;
+  --pastel-gray-500: #6b7280;
+  --pastel-gray-600: #4b5563;
+  --pastel-gray-700: #374151;
+  --pastel-gray-800: #1f2937;
+  
+  /* Azul-gris pastel para el menú */
+  --menu-blue-50: #f8fafc;
+  --menu-blue-100: #f1f5f9;
+  --menu-blue-200: #e2e8f0;
+  --menu-blue-300: #cbd5e1;
+  --menu-blue-400: #94a3b8;
+  --menu-blue-500: #64748b;
+  --menu-blue-600: #475569;
+  --menu-blue-700: #334155;
+  
+  /* Colores suaves para hover */
+  --hover-blue-50: #eff6ff;
+  --hover-blue-100: #dbeafe;
+  --hover-blue-200: #bfdbfe;
+  --hover-blue-300: #93c5fd;
+  --hover-blue-400: #60a5fa;
+  --hover-blue-500: #3b82f6;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, 
+    #ffffff 0%, 
+    #f9fafb 25%, 
+    #f3f4f6 50%, 
+    #e5e7eb 75%, 
+    #d1d5db 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--pastel-gray-700);
+}
+
+/* === FONDO PRINCIPAL OPTIMIZADO PARA TU IMAGEN === */
+
+.hero-background {
+  /* Configuración principal para tu imagen */
+  background: 
+    /* Overlay profesional optimizado */
+    linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.82) 0%, 
+      rgba(248, 250, 252, 0.75) 20%,
+      rgba(241, 245, 249, 0.68) 40%,
+      rgba(226, 232, 240, 0.72) 60%,
+      rgba(203, 213, 225, 0.78) 80%,
+      rgba(255, 255, 255, 0.82) 100%
+    ),
+    /* Tu imagen local con máxima prioridad */
+    url('/image/background-image.jpg');
+  
+  /* Configuración optimizada */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-origin: padding-box;
+  background-clip: border-box;
+  
+  /* Estilo y animación */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  
+  /* Optimizaciones de rendimiento */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  
+  /* Transición suave */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Versión con overlay más sutil para mejor visibilidad de imagen */
+.hero-background-light {
+  background: 
+    /* Overlay muy sutil */
+    linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.45) 0%, 
+      rgba(248, 250, 252, 0.35) 25%,
+      rgba(241, 245, 249, 0.25) 50%,
+      rgba(226, 232, 240, 0.35) 75%,
+      rgba(255, 255, 255, 0.45) 100%
+    ),
+    url('/image/background-image.jpg');
+  
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Versión sin overlay para debug */
+.hero-background-raw {
+  background: url('/image/background-image.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  
+  /* Filtros para mejorar la imagen */
+  filter: brightness(1.05) contrast(1.1) saturate(1.1);
+}
+
+/* Versión con filtros profesionales */
+.hero-background-enhanced {
+  background: 
+    /* Overlay con gradiente más complejo */
+    radial-gradient(
+      ellipse at top, 
+      rgba(255, 255, 255, 0.3) 0%, 
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom, 
+      rgba(255, 255, 255, 0.6) 0%, 
+      rgba(255, 255, 255, 0.2) 30%,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(255, 255, 255, 0.4) 100%
+    ),
+    url('/image/background-image.jpg');
+  
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  
+  /* Filtros para mejorar la imagen */
+  filter: brightness(1.08) contrast(1.15) saturate(1.05) hue-rotate(2deg);
+}
+
+/* === OVERLAYS MEJORADOS === */
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(248, 250, 252, 0.05) 25%,
+    rgba(241, 245, 249, 0.08) 50%,
+    rgba(226, 232, 240, 0.05) 75%,
+    rgba(203, 213, 225, 0.08) 100%
+  );
+  backdrop-filter: blur(0.5px) saturate(1.1);
+  z-index: 1;
+}
+
+/* Overlay más fuerte para mejor contraste de texto */
+.hero-overlay-strong {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(248, 250, 252, 0.12) 25%,
+    rgba(241, 245, 249, 0.15) 50%,
+    rgba(226, 232, 240, 0.12) 75%,
+    rgba(203, 213, 225, 0.15) 100%
+  );
+  backdrop-filter: blur(1px) saturate(1.2);
+  z-index: 1;
+}
+
+/* Overlay completamente transparente para debug */
+.hero-overlay-debug {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+}
+
+/* === EFECTOS DINÁMICOS PARA LA IMAGEN === */
+
+/* Efecto parallax suave */
+.hero-background-parallax {
+  background: 
+    linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.75) 0%, 
+      rgba(248, 250, 252, 0.65) 50%,
+      rgba(255, 255, 255, 0.75) 100%
+    ),
+    url('/image/background-image.jpg');
+  
+  background-size: 110% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  
+  /* Animación sutil */
+  animation: parallaxMove 20s ease-in-out infinite;
+}
+
+@keyframes parallaxMove {
+  0%, 100% { 
+    background-size: 110% auto;
+    background-position: center center;
+  }
+  25% { 
+    background-size: 115% auto;
+    background-position: 48% center;
+  }
+  50% { 
+    background-size: 110% auto;
+    background-position: center 48%;
+  }
+  75% { 
+    background-size: 115% auto;
+    background-position: 52% center;
+  }
+}
+
+/* === PRELOAD Y OPTIMIZACIONES === */
+
+/* Preload invisible para optimizar carga */
+.preload-background {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  background: url('/image/background-image.jpg');
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === RESPONSIVE OPTIMIZADO === */
+
+@media (max-width: 1024px) {
+  .hero-background,
+  .hero-background-light,
+  .hero-background-raw,
+  .hero-background-enhanced,
+  .hero-background-parallax {
+    /* En tablets, reducir el attachment fixed */
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-background,
+  .hero-background-light,
+  .hero-background-raw,
+  .hero-background-enhanced,
+  .hero-background-parallax {
+    /* En móviles, optimizar para rendimiento */
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    
+    /* Overlay más fuerte en móvil para legibilidad */
+    background-image: 
+      linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(255, 255, 255, 0.75) 50%,
+        rgba(255, 255, 255, 0.85) 100%
+      ),
+      url('/image/background-image.jpg');
+  }
+  
+  .hero-background-parallax {
+    animation: none; /* Deshabilitar animación en móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-background,
+  .hero-background-light,
+  .hero-background-enhanced {
+    /* En móviles pequeños, overlay aún más fuerte */
+    background-image: 
+      linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0.9) 100%
+      ),
+      url('/image/background-image.jpg');
+  }
+}
+
+/* === CLASES DE DEBUG TEMPORALES === */
+
+/* Mostrar miniatura de la imagen para verificar carga */
+.test-image-preview {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 120px;
+  background: url('/image/background-image.jpg') center/cover no-repeat;
+  border: 3px solid #10b981;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.test-image-preview::after {
+  content: 'Vista previa de tu imagen ↑';
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  background: #10b981;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Indicador de estado de carga */
+.image-load-indicator {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  animation: pulse 2s infinite;
+}
+
+/* === RESTO DEL CSS ORIGINAL MEJORADO === */
+
+/* Animaciones mejoradas */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-slide-in-top {
+  animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Cards profesionales con nueva paleta */
+.professional-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(107, 114, 128, 0.1),
+    0 2px 8px rgba(156, 163, 175, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.professional-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 16px 48px rgba(107, 114, 128, 0.15),
+    0 4px 16px rgba(156, 163, 175, 0.15);
+  border-color: rgba(156, 163, 175, 0.4);
+}
+
+/* Glassmorphism actualizado */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(209, 213, 219, 0.25);
+  box-shadow: 0 8px 32px rgba(107, 114, 128, 0.12);
+}
+
+.glass-card-dark {
+  background: rgba(71, 85, 105, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer oscuro */
+.footer-dark {
+  background: linear-gradient(
+    135deg,
+    var(--menu-blue-600) 0%,
+    var(--menu-blue-700) 50%,
+    var(--menu-blue-600) 100%
+  );
+  color: var(--pastel-gray-200);
+  border-top: 1px solid var(--menu-blue-500);
+}
+
+/* Scrollbar actualizado */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, var(--pastel-gray-100) 0%, var(--pastel-gray-200) 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--menu-blue-400) 0%, var(--menu-blue-500) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--pastel-gray-100);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--menu-blue-500) 0%, var(--menu-blue-600) 100%);
+}
+
+/* Mejoras para recharts */
+.recharts-tooltip-wrapper {
+  filter: drop-shadow(0 12px 24px rgba(107, 114, 128, 0.15));
+}
+
+.recharts-legend-wrapper {
+  padding-top: 20px !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--pastel-gray-300);
+  stroke-opacity: 0.6;
+}
+
+/* Botones actualizados */
+.btn-primary {
+  background: linear-gradient(135deg, var(--hover-blue-500) 0%, var(--hover-blue-400) 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 16px rgba(59, 130, 246, 0.2),
+    0 2px 4px rgba(96, 165, 250, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 28px rgba(59, 130, 246, 0.3),
+    0 4px 8px rgba(96, 165, 250, 0.2);
+  background: linear-gradient(135deg, var(--hover-blue-400) 0%, var(--hover-blue-500) 100%);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--menu-blue-500) 0%, var(--menu-blue-600) 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 16px rgba(71, 85, 105, 0.2),
+    0 2px 4px rgba(100, 116, 139, 0.1);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 28px rgba(71, 85, 105, 0.3),
+    0 4px 8px rgba(100, 116, 139, 0.2);
+  background: linear-gradient(135deg, var(--menu-blue-600) 0%, var(--menu-blue-700) 100%);
+}
+
+/* Estados de carga */
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--pastel-gray-200) 25%,
+    var(--pastel-gray-300) 50%,
+    var(--pastel-gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 0.75rem;
+}
+
+/* Transiciones suaves */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Tipografía actualizada */
+.text-gradient {
+  background: linear-gradient(135deg, var(--pastel-gray-700) 0%, var(--menu-blue-600) 50%, var(--pastel-gray-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--menu-blue-600) 0%, var(--hover-blue-500) 50%, var(--menu-blue-700) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Estados actualizados */
+.status-error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.status-success {
+  background: linear-gradient(135deg, var(--pastel-gray-50) 0%, var(--pastel-gray-100) 100%);
+  color: var(--pastel-gray-700);
+  border: 1px solid var(--pastel-gray-300);
+}
+
+.status-warning {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.status-info {
+  background: linear-gradient(135deg, var(--hover-blue-50) 0%, var(--hover-blue-100) 100%);
+  color: var(--hover-blue-700);
+  border: 1px solid var(--hover-blue-200);
+}
+
+/* Efectos especiales */
+.hero-title {
+  text-shadow: 2px 2px 4px rgba(107, 114, 128, 0.2);
+}
+
+.card-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(147, 197, 253, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.card-hover-effect:hover::before {
+  left: 100%;
+}
+
+/* Efectos de focus */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px rgba(147, 197, 253, 0.2),
+    0 0 0 1px var(--hover-blue-500);
+  border-color: var(--hover-blue-500);
 }
