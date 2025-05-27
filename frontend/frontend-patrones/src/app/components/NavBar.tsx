@@ -37,37 +37,37 @@ export default function NavBar() {
     {
       href: '/',
       label: 'Dashboard',
-      icon: '📊',
+      icon: '',
       description: 'Panel Principal'
     },
     {
       href: '/volume',
       label: 'Volumen',
-      icon: '📈',
+      icon: '',
       description: 'Análisis de Tráfico'
     },
     {
       href: '/lanes',
       label: 'Carriles',
-      icon: '🛣️',
+      icon: '',
       description: 'Estado de Vías'
     },
     {
       href: '/temporal',
       label: 'Temporal',
-      icon: '📉',
+      icon: '',
       description: 'Tendencias'
     },
     {
       href: '/vehicle-types',
       label: 'Vehículos',
-      icon: '🚗',
+      icon: '',
       description: 'Clasificación'
     },
     {
       href: '/test-api',
       label: 'Diagnóstico',
-      icon: '🔧',
+      icon: '',
       description: 'Sistema'
     }
   ];
@@ -80,7 +80,7 @@ export default function NavBar() {
         <div className="flex justify-between items-center py-4">
           {/* Logo y título */}
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300">
               <span className="text-white text-xl font-bold">🚦</span>
             </div>
             <div>
@@ -98,7 +98,7 @@ export default function NavBar() {
                 {apiStatus === 'online' && (
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 shadow-sm"></div>
-                    <span className="text-xs text-emerald-100 font-medium">Sistema Operativo</span>
+                    <span className="text-xs text-emerald-100 font-medium">online</span>
                   </div>
                 )}
                 {apiStatus === 'offline' && (
@@ -120,7 +120,7 @@ export default function NavBar() {
                 className={`
                   group relative px-4 py-3 rounded-xl transition-all duration-300 font-medium
                   ${isActive(item.href) 
-                    ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-105' 
+                    ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-lg transform scale-105' 
                     : 'text-slate-100 hover:text-white hover:bg-slate-500/40'
                   }
                 `}
@@ -172,7 +172,7 @@ export default function NavBar() {
                 className={`
                   flex items-center space-x-4 px-4 py-3 rounded-lg transition-all duration-300 font-medium
                   ${isActive(item.href)
-                    ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md'
+                    ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-md'
                     : 'text-slate-100 hover:text-white hover:bg-slate-500/50'
                   }
                 `}
