@@ -41,28 +41,10 @@ export default function NavBar() {
       description: 'Panel Principal'
     },
     {
-      href: '/volume',
-      label: 'Volumen',
-      icon: '',
-      description: 'Análisis de Tráfico'
-    },
-    {
       href: '/lanes',
       label: 'Carriles',
       icon: '',
       description: 'Estado de Vías'
-    },
-    {
-      href: '/temporal',
-      label: 'Temporal',
-      icon: '',
-      description: 'Tendencias'
-    },
-    {
-      href: '/vehicle-types',
-      label: 'Vehículos',
-      icon: '',
-      description: 'Clasificación'
     },
     {
       href: '/test-api',
