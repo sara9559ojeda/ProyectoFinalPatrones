@@ -41,36 +41,6 @@ const StatisticsPanel = memo(({ structures }: { structures: DataStructures }) =>
           </div>
         </div>
       ))}
-      
-      <div className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-amber-50 to-yellow-50 p-4 rounded-2xl shadow-lg border border-amber-100">
-        <h3 className="text-lg font-bold text-amber-800 mb-3 flex items-center">
-          <span className="mr-2">🚨</span> Alertas Recientes (Stack)
-        </h3>
-        <div className="space-y-2">
-          {recentAlerts.length > 0 ? recentAlerts.map((alert, index) => (
-            <div key={index} className="bg-white/50 p-2 rounded-lg text-sm text-amber-700">
-              ID: {alert.id} - {alert.date}
-            </div>
-          )) : (
-            <p className="text-amber-600 text-sm">Sin alertas recientes</p>
-          )}
-        </div>
-      </div>
-
-      <div className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-2xl shadow-lg border border-blue-100">
-        <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center">
-          <span className="mr-2">⏳</span> Análisis Pendientes (Queue)
-        </h3>
-        <div className="space-y-2">
-          {pendingAnalysis.length > 0 ? pendingAnalysis.map((analysis, index) => (
-            <div key={index} className="bg-white/50 p-2 rounded-lg text-sm text-blue-700">
-              ID: {analysis.id} - {analysis.date}
-            </div>
-          )) : (
-            <p className="text-blue-600 text-sm">No hay análisis pendientes</p>
-          )}
-        </div>
-      </div>
     </div>
   );
 });

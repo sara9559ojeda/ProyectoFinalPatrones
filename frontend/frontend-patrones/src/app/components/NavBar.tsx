@@ -44,7 +44,7 @@ export default function NavBar() {
       href: '/lanes',
       label: 'Carriles',
       icon: '',
-      description: 'Estado de Vías'
+      description: 'Información por Vías'
     },
     {
       href: '/test-api',
