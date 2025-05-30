@@ -1,0 +1,663 @@
+{
+    "detections": [
+        {
+            "timestamp_ms": 737,
+            "date": "2025-05-30 16:59:06",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {}
+        },
+        {
+            "timestamp_ms": 3693,
+            "date": "2025-05-30 16:59:08",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {}
+        },
+        {
+            "timestamp_ms": 5200,
+            "date": "2025-05-30 16:59:09",
+            "objects_total": {
+                "car": 10,
+                "bus": 1,
+                "truck": 1
+            },
+            "objects_by_lane": {
+                "lane_2": {
+                    "car": 4,
+                    "bus": 1
+                },
+                "lane_1": {
+                    "car": 4,
+                    "truck": 1
+                },
+                "lane_3": {
+                    "car": 2
+                }
+            },
+            "avg_speed_by_lane": {}
+        },
+        {
+            "timestamp_ms": 6470,
+            "date": "2025-05-30 16:59:10",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 12.132614901346239,
+                "lane_1": 20.70588806194283,
+                "lane_3": 14.172130411741062
+            }
+        },
+        {
+            "timestamp_ms": 7547,
+            "date": "2025-05-30 16:59:11",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 8.999852757130736,
+                "lane_1": 19.460620259005513,
+                "lane_3": 10.232756921956366
+            }
+        },
+        {
+            "timestamp_ms": 8535,
+            "date": "2025-05-30 16:59:12",
+            "objects_total": {
+                "car": 1
+            },
+            "objects_by_lane": {
+                "lane_3": {
+                    "car": 1
+                }
+            },
+            "avg_speed_by_lane": {
+                "lane_2": 8.665973301322541,
+                "lane_1": 18.662618175992982,
+                "lane_3": 9.737087607501941
+            }
+        },
+        {
+            "timestamp_ms": 9411,
+            "date": "2025-05-30 16:59:13",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 9.915575651654555,
+                "lane_1": 20.95125377374176,
+                "lane_3": 7.487461894213133
+            }
+        },
+        {
+            "timestamp_ms": 10355,
+            "date": "2025-05-30 16:59:14",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 11.246190760236228,
+                "lane_1": 20.61050601401599,
+                "lane_3": 10.834357119840545
+            }
+        },
+        {
+            "timestamp_ms": 11218,
+            "date": "2025-05-30 16:59:15",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 13.195766856026733,
+                "lane_1": 22.929531699286034,
+                "lane_3": 13.859550041749772
+            }
+        },
+        {
+            "timestamp_ms": 12846,
+            "date": "2025-05-30 16:59:16",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 11.397295126202597,
+                "lane_1": 20.31201477566887,
+                "lane_3": 13.193257033871063
+            }
+        },
+        {
+            "timestamp_ms": 13776,
+            "date": "2025-05-30 16:59:17",
+            "objects_total": {
+                "car": 1
+            },
+            "objects_by_lane": {
+                "lane_3": {
+                    "car": 1
+                }
+            },
+            "avg_speed_by_lane": {
+                "lane_2": 9.126053578484186,
+                "lane_1": 19.37939104814091,
+                "lane_3": 13.622830361228216
+            }
+        },
+        {
+            "timestamp_ms": 14700,
+            "date": "2025-05-30 16:59:18",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 10.682437768350985,
+                "lane_1": 19.985708121006518,
+                "lane_3": 10.80527072498353
+            }
+        },
+        {
+            "timestamp_ms": 15522,
+            "date": "2025-05-30 16:59:19",
+            "objects_total": {
+                "car": 1
+            },
+            "objects_by_lane": {
+                "lane_3": {
+                    "car": 1
+                }
+            },
+            "avg_speed_by_lane": {
+                "lane_2": 11.150642821762814,
+                "lane_1": 19.766683218291487,
+                "lane_3": 19.44485236437555
+            }
+        },
+        {
+            "timestamp_ms": 16321,
+            "date": "2025-05-30 16:59:20",
+            "objects_total": {
+                "car": 1
+            },
+            "objects_by_lane": {
+                "lane_2": {
+                    "car": 1
+                }
+            },
+            "avg_speed_by_lane": {
+                "lane_2": 14.871876723111944,
+                "lane_1": 23.058718287649636,
+                "lane_3": 18.50934559106006
+            }
+        },
+        {
+            "timestamp_ms": 17131,
+            "date": "2025-05-30 16:59:21",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 15.365480105210473,
+                "lane_1": 23.114041398400836,
+                "lane_3": 22.39950163965991
+            }
+        },
+        {
+            "timestamp_ms": 17998,
+            "date": "2025-05-30 16:59:21",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 14.817577610381013,
+                "lane_1": 23.985830530057545,
+                "lane_3": 27.65051868541002
+            }
+        },
+        {
+            "timestamp_ms": 18747,
+            "date": "2025-05-30 16:59:22",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 12.443836138220021,
+                "lane_1": 22.78618350159703,
+                "lane_3": 20.7678522157642
+            }
+        },
+        {
+            "timestamp_ms": 19625,
+            "date": "2025-05-30 16:59:23",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 13.489332489456755,
+                "lane_1": 23.776268048558386,
+                "lane_3": 25.87863191432578
+            }
+        },
+        {
+            "timestamp_ms": 20585,
+            "date": "2025-05-30 16:59:24",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 13.972377961185913,
+                "lane_1": 23.662071255074775,
+                "lane_3": 23.56710864597606
+            }
+        },
+        {
+            "timestamp_ms": 21472,
+            "date": "2025-05-30 16:59:25",
+            "objects_total": {
+                "car": 2
+            },
+            "objects_by_lane": {
+                "lane_1": {
+                    "car": 1
+                },
+                "lane_2": {
+                    "car": 1
+                }
+            },
+            "avg_speed_by_lane": {
+                "lane_2": 12.909230575241738,
+                "lane_1": 21.948101363838568,
+                "lane_3": 21.174582992438978
+            }
+        },
+        {
+            "timestamp_ms": 22357,
+            "date": "2025-05-30 16:59:26",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 17.61012591789383,
+                "lane_1": 21.70634026003157,
+                "lane_3": 24.024849317116114
+            }
+        },
+        {
+            "timestamp_ms": 23211,
+            "date": "2025-05-30 16:59:27",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 17.571266400247556,
+                "lane_1": 21.267249110403117,
+                "lane_3": 17.56316555267432
+            }
+        },
+        {
+            "timestamp_ms": 24038,
+            "date": "2025-05-30 16:59:27",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 16.909799293535592,
+                "lane_1": 19.456107712881575,
+                "lane_3": 15.695498789005985
+            }
+        },
+        {
+            "timestamp_ms": 24865,
+            "date": "2025-05-30 16:59:28",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 14.413052944538373,
+                "lane_1": 20.012829273020245,
+                "lane_3": 17.235882034968768
+            }
+        },
+        {
+            "timestamp_ms": 25637,
+            "date": "2025-05-30 16:59:29",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 14.92308073746379,
+                "lane_1": 19.62450717912688,
+                "lane_3": 17.972380729634086
+            }
+        },
+        {
+            "timestamp_ms": 26481,
+            "date": "2025-05-30 16:59:30",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 15.397353577276892,
+                "lane_1": 16.599405663183475,
+                "lane_3": 17.824949312372052
+            }
+        },
+        {
+            "timestamp_ms": 27300,
+            "date": "2025-05-30 16:59:31",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 16.076636617943745,
+                "lane_1": 17.03607723579982,
+                "lane_3": 19.877170982166856
+            }
+        },
+        {
+            "timestamp_ms": 28114,
+            "date": "2025-05-30 16:59:32",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 15.278390119227794,
+                "lane_1": 17.166444469794417,
+                "lane_3": 19.74946720098456
+            }
+        },
+        {
+            "timestamp_ms": 28998,
+            "date": "2025-05-30 16:59:32",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 13.397508905491568,
+                "lane_1": 16.905923559471926,
+                "lane_3": 16.143943987061274
+            }
+        },
+        {
+            "timestamp_ms": 29787,
+            "date": "2025-05-30 16:59:33",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 13.065080784204055,
+                "lane_1": 18.659208637301976,
+                "lane_3": 33.89696682146744
+            }
+        },
+        {
+            "timestamp_ms": 30554,
+            "date": "2025-05-30 16:59:34",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 15.72230292058444,
+                "lane_1": 18.946075766330477,
+                "lane_3": 42.99488657253408
+            }
+        },
+        {
+            "timestamp_ms": 31305,
+            "date": "2025-05-30 16:59:35",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 18.63478059398016,
+                "lane_1": 18.861298448198962,
+                "lane_3": 40.72200685173702
+            }
+        },
+        {
+            "timestamp_ms": 32189,
+            "date": "2025-05-30 16:59:35",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 21.794079741786163,
+                "lane_1": 19.202276057333588,
+                "lane_3": 43.39026384691401
+            }
+        },
+        {
+            "timestamp_ms": 32968,
+            "date": "2025-05-30 16:59:36",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 27.118092024314507,
+                "lane_1": 20.66756149198007,
+                "lane_3": 18.262726857097917
+            }
+        },
+        {
+            "timestamp_ms": 33718,
+            "date": "2025-05-30 16:59:37",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 28.88161414285596,
+                "lane_1": 26.16973537972935,
+                "lane_3": 30.44306163978887
+            }
+        },
+        {
+            "timestamp_ms": 34468,
+            "date": "2025-05-30 16:59:38",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 31.70129836463525,
+                "lane_1": 29.301124293635738,
+                "lane_3": 47.308046536016846
+            }
+        },
+        {
+            "timestamp_ms": 35190,
+            "date": "2025-05-30 16:59:38",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 33.72130091521568,
+                "lane_1": 32.87364409373726,
+                "lane_3": 53.92442057915055
+            }
+        },
+        {
+            "timestamp_ms": 35947,
+            "date": "2025-05-30 16:59:39",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 30.478066522937997,
+                "lane_1": 40.02074997223874,
+                "lane_3": 54.508442472555274
+            }
+        },
+        {
+            "timestamp_ms": 36663,
+            "date": "2025-05-30 16:59:40",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 30.011118220670976,
+                "lane_1": 37.013070013380286,
+                "lane_3": 48.145433421722174
+            }
+        },
+        {
+            "timestamp_ms": 37420,
+            "date": "2025-05-30 16:59:41",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 27.072847752538905,
+                "lane_1": 34.581080928800695,
+                "lane_3": 29.765501299639197
+            }
+        },
+        {
+            "timestamp_ms": 38164,
+            "date": "2025-05-30 16:59:41",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 25.312366376995097,
+                "lane_1": 31.10253390665243,
+                "lane_3": 26.30386239954232
+            }
+        },
+        {
+            "timestamp_ms": 38891,
+            "date": "2025-05-30 16:59:42",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 24.297816794935745,
+                "lane_1": 21.653447695104433,
+                "lane_3": 24.5987868954785
+            }
+        },
+        {
+            "timestamp_ms": 39627,
+            "date": "2025-05-30 16:59:43",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 21.776287409964045,
+                "lane_1": 18.67240216204687,
+                "lane_3": 20.886975620560737
+            }
+        },
+        {
+            "timestamp_ms": 40402,
+            "date": "2025-05-30 16:59:44",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 21.654895676406195,
+                "lane_1": 20.92954800616219,
+                "lane_3": 22.57783701441624
+            }
+        },
+        {
+            "timestamp_ms": 41119,
+            "date": "2025-05-30 16:59:44",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 21.43138474458446,
+                "lane_1": 20.776777963259082,
+                "lane_3": 24.06579884867575
+            }
+        },
+        {
+            "timestamp_ms": 41891,
+            "date": "2025-05-30 16:59:45",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 27.555238433905284,
+                "lane_1": 24.23259981001789,
+                "lane_3": 27.450876830578114
+            }
+        },
+        {
+            "timestamp_ms": 42621,
+            "date": "2025-05-30 16:59:46",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 30.04534009388521,
+                "lane_1": 25.186397439793854,
+                "lane_3": 30.426499615605156
+            }
+        },
+        {
+            "timestamp_ms": 43370,
+            "date": "2025-05-30 16:59:47",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 27.04858769472063,
+                "lane_1": 26.40732000338701,
+                "lane_3": 35.06261820817536
+            }
+        },
+        {
+            "timestamp_ms": 44156,
+            "date": "2025-05-30 16:59:48",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 29.30454076741946,
+                "lane_1": 29.60478593618443,
+                "lane_3": 34.87510906591409
+            }
+        },
+        {
+            "timestamp_ms": 44960,
+            "date": "2025-05-30 16:59:48",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 22.71709861615144,
+                "lane_1": 29.020954108482297,
+                "lane_3": 31.579441209260494
+            }
+        },
+        {
+            "timestamp_ms": 45789,
+            "date": "2025-05-30 16:59:49",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 19.878997301099343,
+                "lane_1": 27.60058956288761,
+                "lane_3": 30.78632625004492
+            }
+        },
+        {
+            "timestamp_ms": 46599,
+            "date": "2025-05-30 16:59:50",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 19.778925843044824,
+                "lane_1": 23.039177868576942,
+                "lane_3": 25.43940812541982
+            }
+        },
+        {
+            "timestamp_ms": 47367,
+            "date": "2025-05-30 16:59:51",
+            "objects_total": {
+                "car": 1
+            },
+            "objects_by_lane": {
+                "lane_1": {
+                    "car": 1
+                }
+            },
+            "avg_speed_by_lane": {
+                "lane_2": 17.218932269005776,
+                "lane_1": 20.9728997680462,
+                "lane_3": 26.737856232609904
+            }
+        },
+        {
+            "timestamp_ms": 48141,
+            "date": "2025-05-30 16:59:51",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 14.74206378916333,
+                "lane_1": 28.39128011875102,
+                "lane_3": 25.059399763574895
+            }
+        },
+        {
+            "timestamp_ms": 48912,
+            "date": "2025-05-30 16:59:52",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 17.176435017870947,
+                "lane_1": 28.607939498076746,
+                "lane_3": 18.32098684912492
+            }
+        },
+        {
+            "timestamp_ms": 49640,
+            "date": "2025-05-30 16:59:53",
+            "objects_total": {},
+            "objects_by_lane": {},
+            "avg_speed_by_lane": {
+                "lane_2": 18.16224583882146,
+                "lane_1": 27.45961017519283,
+                "lane_3": 17.979412772314912
+            }
+        }
+    ]
+}
