@@ -11,7 +11,7 @@ import com.example.demo.entity.Detection;
 
 @Repository
 public interface DetectionRepository extends JpaRepository<Detection, Long> {
-    
+
     @Query(value = "SELECT * FROM detections ORDER BY timestamp_ms DESC LIMIT 50", nativeQuery = true)
     List<Detection> findTop50ByOrderByTimestampMsDesc();
 

@@ -51,10 +51,8 @@ export default function RootLayout({
             </div>
           </main>
           
-          {/* Footer mejorado con tema oscuro pastel */}
           <footer className="footer-dark py-16 mt-24">
             <div className="container mx-auto px-6">
-              {/* Logo y descripción principal */}
               <div className="text-center mb-12">
                 <div className="flex items-center justify-center mb-6 animate-fade-in">
                   <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-orange-700 rounded-2xl flex items-center justify-center mr-6 shadow-xl animate-float">
@@ -78,11 +76,11 @@ export default function RootLayout({
                   <ul className="space-y-3 text-slate-400">
                     <li className="flex items-center group hover:text-slate-300 transition-colors duration-300">
                       <div className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
-                      <span>Next.js 15</span>
+                      <span>Next.js </span>
                     </li>
                     <li className="flex items-center group hover:text-slate-300 transition-colors duration-300">
                       <div className="w-3 h-3 bg-emerald-500 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
-                      <span>Spring Boot 3.4</span>
+                      <span>Spring Boot </span>
                     </li>
                     <li className="flex items-center group hover:text-slate-300 transition-colors duration-300">
                       <div className="w-3 h-3 bg-violet-500 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
@@ -101,11 +99,11 @@ export default function RootLayout({
                   <ul className="space-y-3 text-slate-400">
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
                       <span className="mr-3 text-lg">🔄</span>
-                      <span>Monitoreo en Tiempo Real</span>
+                      <span>Monitoreo</span>
                     </li>
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
                       <span className="mr-3 text-lg">📊</span>
-                      <span>Análisis Predictivo</span>
+                      <span>Análisis</span>
                     </li>
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
                       <span className="mr-3 text-lg">🛣️</span>
@@ -124,19 +122,19 @@ export default function RootLayout({
                   <ul className="space-y-3 text-slate-400">
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
                       <span className="mr-3 text-lg">📋</span>
-                      <span>Arrays Optimizados</span>
+                      <span>Arrays </span>
                     </li>
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
                       <span className="mr-3 text-lg">📚</span>
-                      <span>Pilas (Stack)</span>
+                      <span>Diccionarios</span>
                     </li>
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
                       <span className="mr-3 text-lg">📄</span>
-                      <span>Colas (Queue)</span>
+                      <span>Listas</span>
                     </li>
                     <li className="flex items-center hover:text-slate-300 transition-colors duration-300">
-                      <span className="mr-3 text-lg">🌳</span>
-                      <span>Árboles de Decisión</span>
+                      <span className="mr-3 text-lg">📜</span>
+                      <span>Tuplas</span>
                     </li>
                   </ul>
                 </div>
@@ -147,7 +145,7 @@ export default function RootLayout({
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <div className="w-4 h-4 bg-emerald-500 rounded-full mr-3 animate-pulse shadow-lg"></div>
-                      <span className="text-slate-300 font-medium">Sistema Operativo</span>
+                      <span className="text-slate-300 font-medium">Operativo</span>
                     </div>
                     <div className="bg-slate-600/50 p-4 rounded-xl backdrop-blur-sm border border-slate-600">
                       <p className="text-xs text-slate-400 mb-1">Última actualización</p>
@@ -166,17 +164,12 @@ export default function RootLayout({
               {/* Separador */}
               <div className="border-t border-slate-600 pt-8">
                 <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-                  {/* Copyright */}
                   <div className="text-center lg:text-left">
                     <p className="text-slate-300 text-lg font-medium">
                       © {new Date().getFullYear()} Sistema de Análisis de Tráfico. Todos los derechos reservados.
                     </p>
-                    <p className="text-slate-400 text-sm mt-2">
-                      Plataforma desarrollada con tecnologías modernas para análisis profesional
-                    </p>
                   </div>
 
-                  {/* Enlaces rápidos */}
                   <div className="flex items-center space-x-8">
                     <a 
                       href="/test-api" 
@@ -220,7 +213,7 @@ export default function RootLayout({
               {/* Línea final */}
               <div className="mt-8 pt-6 border-t border-slate-600 text-center">
                 <p className="text-slate-500 text-sm">
-                  Desarrollado con ❤️ para el análisis inteligente del tráfico vehicular
+                  Desarrollado con ❤️, análisis inteligente del tráfico vehicular
                 </p>
               </div>
             </div>

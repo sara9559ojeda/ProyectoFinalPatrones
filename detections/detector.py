@@ -2,16 +2,15 @@ import cv2
 import json
 import time
 import numpy as np
-from collections import defaultdict
+from collections import defaultdict, deque
 from ultralytics import YOLO
 from deep_sort_realtime.deepsort_tracker import DeepSort
 from sklearn.cluster import DBSCAN
-from datetime import datetime  
-
+from datetime import datetime
 
 model = YOLO("yolov8n.pt")
 cap = cv2.VideoCapture("data/video1.mp4")
-tracker = DeepSort(max_age=30)
+tracker = DeepSort(max_age=50)
 
 if not cap.isOpened():
     print("Error al abrir el video")
@@ -34,25 +33,30 @@ start_time = time.time() * 1000
 eps_dbscan = 50  
 min_samples_dbscan = 1  
 
+unique_vehicle_ids = defaultdict(set)
+unique_vehicle_ids_by_lane = defaultdict(lambda: defaultdict(set))
+seen_track_ids = set()
+track_history = {} 
+posiciones_por_track = defaultdict(lambda: deque(maxlen=5)) 
 
 def detectar_carriles(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
     edges = cv2.Canny(blur, 50, 150, apertureSize=3)
-
     lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=100, minLineLength=100, maxLineGap=50)
+
     if lines is None:
         return []
 
     vertical_lines = []
     for line in lines:
         x1, y1, x2, y2 = line[0]
-        if abs(x2 - x1) > 50: 
+        if abs(x2 - x1) > 50:
             x_center = int((x1 + x2) / 2)
             vertical_lines.append([x_center])
 
     if len(vertical_lines) < 2:
-        return []  
+        return []
 
     clustering = DBSCAN(eps=eps_dbscan, min_samples=min_samples_dbscan).fit(vertical_lines)
     labels = clustering.labels_
@@ -61,22 +65,19 @@ def detectar_carriles(frame):
     unique_labels = set(labels)
     for label in unique_labels:
         if label == -1:
-            continue  
+            continue
         cluster_points = [vertical_lines[i][0] for i in range(len(vertical_lines)) if labels[i] == label]
         x_mean = int(np.mean(cluster_points))
         carril_lines.append(x_mean)
 
     carril_lines = sorted(carril_lines)
-
     carriles = []
     for i in range(len(carril_lines) - 1):
         carriles.append((carril_lines[i], carril_lines[i + 1]))
-
     carriles.insert(0, (0, carril_lines[0]))
     carriles.append((carril_lines[-1], frame.shape[1]))
 
     return carriles
-
 
 ret, frame = cap.read()
 if not ret:
@@ -90,9 +91,7 @@ if len(carriles_detectados) == 0:
 
 print(f"Carriles detectados: {len(carriles_detectados)}")
 
-cap.set(cv2.CAP_PROP_POS_FRAMES, 0)  
-
-track_history = {}
+cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
 while True:
     ret, frame = cap.read()
@@ -105,7 +104,7 @@ while True:
         detections = []
 
         for box in results[0].boxes:
-            if float(box.conf) >= 0.3:
+            if float(box.conf) >= 0.5:
                 cls = model.names[int(box.cls)]
                 if cls not in ['car', 'bus', 'truck']:
                     continue
@@ -131,31 +130,42 @@ while True:
             lane_id = None
             for idx, (xmin, xmax) in enumerate(carriles_detectados):
                 if xmin <= x_center < xmax:
-                    lane_id = f"lane_{idx+1}"
+                    lane_id = f"lane_{idx + 1}"
                     break
 
-            if track_id in track_history:
-                prev_x, prev_y, prev_time = track_history[track_id]
-                dx = x_center - prev_x
-                dy = y_center - prev_y
+            if track_id not in seen_track_ids:
+                seen_track_ids.add(track_id)
+
+                if cls not in unique_vehicle_ids or track_id not in unique_vehicle_ids[cls]:
+                    unique_vehicle_ids[cls].add(track_id)
+                    counts_total[cls] += 1
+
+                    if lane_id and track_id not in unique_vehicle_ids_by_lane[lane_id][cls]:
+                        unique_vehicle_ids_by_lane[lane_id][cls].add(track_id)
+                        counts_by_lane[lane_id][cls] += 1
+
+            posiciones_por_track[track_id].append((x_center, y_center, current_time))
+
+            if len(posiciones_por_track[track_id]) >= 2:
+                x_prev, y_prev, t_prev = posiciones_por_track[track_id][0]
+                x_curr, y_curr, t_curr = posiciones_por_track[track_id][-1]
+
+                dx = x_curr - x_prev
+                dy = y_curr - y_prev
                 distance_pixels = np.sqrt(dx**2 + dy**2)
-                time_diff = (current_time - prev_time) / 1000  
+                time_diff = (t_curr - t_prev) / 1000
+
                 if time_diff > 0:
-                    speed = (distance_pixels / time_diff) * 3.6  
+                    speed = (distance_pixels / time_diff) * 3.6 
                     if lane_id:
                         speeds_by_lane[lane_id].append(speed)
-            track_history[track_id] = (x_center, y_center, current_time)
 
-            if lane_id:
-                counts_by_lane[lane_id][cls] += 1
-            counts_total[cls] += 1
-          
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
             label = f"{cls} ID:{track_id}"
             cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
         for (xmin, xmax) in carriles_detectados:
-            cv2.line(frame, (xmin, 0), (xmin, frame.shape[0]), (255, 0, 0), 2)
+            cv2.line(frame, (xmin, 0), (xmin, frame.shape[0]), (255, 0, 0), 4)
 
         avg_speed_by_lane = {}
         for lane, speeds in speeds_by_lane.items():
@@ -180,7 +190,7 @@ while True:
     cv2.imshow("Detección Adaptativa", resized_frame)
 
     key = cv2.waitKey(frame_delay) & 0xFF
-    if key in (ord('q'), 27): 
+    if key in (ord('q'), 27):
         break
 
 cap.release()

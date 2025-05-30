@@ -15,7 +15,7 @@ interface DashboardProps {
 
 const StatisticsPanel = memo(({ structures }: { structures: DataStructures }) => {
   const quickMetrics = structures.arrayData.slice(0, 4);
-  const metricLabels = ['Flujo Actual', 'Velocidad Prom.', 'Densidad', 'Eficiencia'];
+  const metricLabels = ['Horarios', 'Velocidad', 'Vehiculos', 'Volumen'];
   
   const recentAlerts = structures.stackData.slice(0, 3);
   const pendingAnalysis = structures.queueData.slice(0, 3);
@@ -31,7 +31,6 @@ const StatisticsPanel = memo(({ structures }: { structures: DataStructures }) =>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-rose-600 font-medium">{metricLabels[index]}</p>
-              <p className="text-2xl font-bold text-rose-800">{value}</p>
             </div>
             <div className="w-12 h-12 bg-gradient-to-br from-rose-200 to-pink-200 rounded-full flex items-center justify-center">
               <span className="text-rose-700 text-xl">
@@ -97,7 +96,7 @@ const Dashboard = memo(({ data, isLoading = false }: DashboardProps) => {
           <span className="text-4xl text-gray-500">📊</span>
         </div>
         <h2 className="text-2xl font-bold text-gray-700 mb-2">Sin datos disponibles</h2>
-        <p className="text-gray-500">El backend no ha devuelto datos para mostrar.</p>
+        <p className="text-gray-500">No ha devuelto datos para mostrar.</p>
         <p className="text-sm text-gray-400 mt-2">Verifique la conexión con el servidor.</p>
       </div>
     );
